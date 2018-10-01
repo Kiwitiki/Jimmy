@@ -63,12 +63,3 @@ class SmokingSquirrl(Enemy):
                         hp = 8,
                         damage = 4)
 
-
-import Item
-import Enemy
-
-
-class MapTile:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
