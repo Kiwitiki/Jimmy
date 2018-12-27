@@ -1,3 +1,6 @@
+
+########################################### Items ###########################################
+
 class Item():
     def __init__(self, name, description,value):
         self.name = name
@@ -7,6 +10,8 @@ class Item():
     def __str__(self):
         return "{}\n=====\n{}\nValue: {}\n".format(self.name, self.description, self.value)
 
+
+########################################### Weapons ###########################################
 class Weapon(Item):
     def __init__(self, name, description, value, damage):
         self.damage = damage
@@ -35,6 +40,9 @@ class BareHands(Weapon):
                         description = "Your bare Hands, can easily be hurt.",
                         value = 0,
                         damage = 2)
+
+
+########################################### Enemys ###########################################
 
 class Enemy():
     def __init__(self, name, hp, damage):

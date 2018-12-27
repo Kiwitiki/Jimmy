@@ -1,9 +1,10 @@
 import textwrap
-
+import clinical
+import tiles
 
 class Adventure(object):
     def prompt(self):
-        x = input("Type a command: ")
+        x = input.lower("Type a command: ")
         return(x)
 
 ########################################### beginning stats ###########################################
@@ -45,7 +46,7 @@ class Adventure(object):
         self.StartingRoom()
           
         if player in StartingRoom():  
-          command = prompt()
+          command = input(prompt)
            if command == "1":
                 Room_description()
             elif command == "2":
@@ -57,3 +58,12 @@ class Adventure(object):
                 StartingRoom()
             else:
                 StartingRoom()
+
+
+def main():
+    adventure = Adventure()
+    adventure.start()
+
+
+if __name__ == '__main__':
+    main()
