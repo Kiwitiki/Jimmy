@@ -6,6 +6,8 @@ class Adventure(object):
         x = input("Type a command: ")
         return(x)
 
+########################################### beginning stats ###########################################
+
     def __init__(self):
         self.gold = 2
         self.health = 10
@@ -29,6 +31,8 @@ class Adventure(object):
             print("Ranged:", ranged)
             print("Ammo:", ammo)
 
+########################################### Greeting ###########################################
+
     def start(self):
         msg = textwrap.dedent('''
         ****************************************
@@ -39,6 +43,8 @@ class Adventure(object):
         ''')
         print(msg)
         self.StartingRoom()
+          
+        if player in StartingRoom():  
           command = prompt()
            if command == "1":
                 Room_description()
