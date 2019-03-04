@@ -14,10 +14,10 @@ class MapTile:
     def modify_player(self, player):
         raise NotImplementedError()
 
-# all directions
-directions = ("norden", "osten", "süden", "westen", "oben", "unten")
+    # all directions
+    directions = ("norden", "osten", "süden", "westen", "oben", "unten")
 
-
+    look_around = null  
 
 ########################################### Rooms #############################################   
 
@@ -29,6 +29,9 @@ directions = ("norden", "osten", "süden", "westen", "oben", "unten")
             It looks abandoned and smells musty.
             """)
 
+            look_around = ("""
+            Chairs and tables are laying around on the ground. It looks like a bomb had hit.
+            """)
 
 
             
@@ -45,7 +48,7 @@ directions = ("norden", "osten", "süden", "westen", "oben", "unten")
             Around the Door are scratches that look like a giant cat made them.
             """)
 
-            look_around = print("""
+            look_around = ("""
             In one chest on your right you can see a Gummy Bear laying next to an Apple.
             On the North site of the Room is an old Carpet. the left side of the Carpet is covored in Blood.""")
 
@@ -69,8 +72,7 @@ class LootRoom2(MapTile):
 
         look_around = print("""
         Through some of the plankets you see something shimmering. As you look further you discover a door leading to the North. 
-        Moss is growing around it. The way is lightly blocked but you could make it through the plankets.
-        """)
+        Moss is growing around it. The way is lightly blocked but you could make it through the plankets.""")
     
     def __init__(self, x, y, item):
         self.item = item
@@ -110,6 +112,11 @@ class LootRoom2(MapTile):
 
 
     class Cellar(MapTile):
+        def intro_text():
+            print(""" 
+            You entered a hidden Cellar. 
+            """)
+
         def __init__(self, x, y, item):
             self.item = item
             super().__init__(x,y)
@@ -131,3 +138,31 @@ class LootRoom2(MapTile):
                 the_player.hp = the_player.hp - self.enemy.damage
                 print("Enemy does {} damage. You have {} HP remaining.".format(
                 self.enemy.damage, the_player.hp))
+
+##########################################  Characters ########################################
+class Character:
+    actions = {}
+    appearance = null
+    weapon = null
+    room = null
+    enemy_type = null
+    state = {sleeping: health = health -2
+            awake: health = health
+            angry: damage = damage +3
+            tired: damage = damage -2
+            friendly: helper()}
+
+    def guard(Character):
+        state = sleeping
+        actions = {"check":"You see the guard is still sleeping, you need to get to that door on the right of him. What are you waiting for?",
+                    "sneak":"You approach the guard, he's still sleeping. Reaching for the door, you open it slowly and slip out.",
+                    "attack":"You swiftly run towards the sleeping guard and knock him out with the hilt of your shiney sword. Unfortunately it wasn't hard enough."}
+
+    def helper(Character):
+        state = friendly
+        actions = {
+            "advice": room(advice)
+            "heal": health = health +1
+            "store": 
+
+        }
