@@ -90,7 +90,7 @@ class LootRoom2(MapTile):
             print("""
             It is dark in here. You need some time to be able to see clearly. When you begin seeing some silhouettes, you suddenly hear a dull sound as if something heavy had fallen down.
             Your knees begin to shake. Heavy steps are comming closer. Your eyes are searching in the dark.
-            It stops. Something is breathing. 
+            It stops. You can hear that someone is breathing. 
             """)
 
             if input(prompt) == "hello" or "hi" or "who is there" or "?" or "what":
