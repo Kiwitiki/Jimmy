@@ -2,6 +2,7 @@ import textwrap
 import clinical
 import tiles
 
+
 class Adventure(object):
     def prompt(self):
         x = input.lower("Type a command: ")
@@ -26,8 +27,8 @@ class Adventure(object):
         print("Gold:", self.gold)
         print("Health:", self.health, "/", self.full_health)
         print("Melee:", self.melee)
-        print ("Energy:", self.energy)
-        
+        print("Energy:", self.energy)
+
         if ranged > 0:
             print("Ranged:", ranged)
             print("Ammo:", ammo)
@@ -44,8 +45,8 @@ class Adventure(object):
         ''')
         print(msg)
         self.StartingRoom()
-          
-        if player in StartingRoom():  
+
+        if player in StartingRoom():
           command = input(prompt)
            if command == "1":
                 Room_description()
